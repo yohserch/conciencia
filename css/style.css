@@ -1,0 +1,286 @@
+body {
+	background: rgb(236, 240, 241);
+	margin: 0;
+	font-size: 16px;
+	font-family: "Opensans";
+}
+
+header {
+	background: rgb(40, 40, 40);
+	padding-bottom: 1em;
+}
+
+header ul {
+	margin: 0;
+	padding: 0;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+header ul li {
+	list-style: none;
+	display: inline-block;
+	font-size: 1.25em;
+	font-family: "Existence";
+}
+
+header ul li a {
+	text-decoration: none;
+	color: rgb(240,240,240);
+}
+
+header img {
+	width: 200px;
+}
+
+div#lineaGuinda {
+	background: rgb(116, 40, 68);
+	height: 25px;
+}
+
+div#lineaGuinda > div#logoIPN {
+	background: rgb(116, 40, 68);
+	display: flex;
+	position: relative;
+	top: -19px;
+	align-items: center;
+	margin: 0 auto;
+	border-radius: 50%;
+	height: 60px;
+	width: 60px;
+	box-shadow: 1px 1px 5px rgba(40,40,40,0.7);
+}
+
+div#lineaGuinda > div#logoIPN img {
+	margin: 0 auto;
+	width: 30px;
+	height: 45px;
+}
+
+header ul li#logo {
+	margin-right: 2em;
+}
+
+
+section {
+	background: rgb(250,250,250);
+	/*box-shadow: 1px 1px 10px rgba(40,40,40,0.5);*/
+	padding-top: .5em;
+	padding-bottom: 1em;
+	margin: 1.2em auto;
+	/*margin-top: 1.2em;*/
+	width: 65%;
+	border-radius: 3px;
+	box-shadow: 0px 0px 10px rgba(40,40,40,0.3);
+}
+
+section h2 {
+	background: rgba(116, 40, 68, 1);
+	border-top: 2px solid rgba(116, 40, 68, 1);
+	border-bottom: 2px solid rgba(116, 40, 68, 1);
+	color: white;
+	padding-left: 1.5em;
+	padding-bottom: 5px;
+	padding-top: 5px;
+	font-family: "Opensans";
+	font-weight: lighter;
+	font-size: 2em;
+	box-shadow: inset 0px 4px 0px -2px #fff, inset 0px -4px 0px -2px #fff;
+	text-shadow: 2px 2px 2px rgba(40,40,40, 0.5);
+}
+
+div#content {
+	padding-left: 1em;
+	padding-right: 1em;
+}
+
+div#content table {
+	width: 100%;
+	text-align: center;
+	border-spacing: 0;
+}
+
+#map {
+	display: block;
+	margin: 0 auto;
+	width: calc(100% - 2em)
+}
+
+h3 {
+	text-align: center;
+}
+
+/*div#content table thead th {
+	background: rgb(46, 46, 46);
+	color: white;
+	padding-top: 1em;
+	padding-bottom: 1em;
+}*/
+
+div#content table thead th{
+	border-bottom: 1px solid rgb(26, 187, 154);
+	padding-bottom: 5px
+}
+
+div#content table tbody td {
+	padding-bottom: .5em;
+	padding-top: .5em;
+}
+
+div#content table tbody tr:nth-child(2n) {
+	background: rgba(42, 210, 187, 0.1);
+}
+
+form.form-center {
+	display: inline-block;
+	width: 60%;
+	background: url("../img/pattern_lineas.png");
+	padding: 1em;
+	margin: 0 auto;
+	margin-top: 1em;
+	display: block;
+}
+
+form.form-center input[type="text"], form.form-center textarea {
+	border-radius: 3px;
+	border: 1px solid rgba(40,40,40,0.2);
+	/*margin-left: 2em;*/
+	margin-top: 10px;
+	padding: 10px;
+	width: calc(100% - 25px);
+	color: rgba(40,40,40,1);
+	font-size: .9em;
+	font-family: "Opensans";
+}
+
+form.form-center input[type="text"]:focus, form.form-center textarea:focus {
+	outline: none;	
+}
+
+form.form-center input[type="file"] {
+	display: none;
+}
+
+form.form-center label#lbl-archivos {
+	cursor: pointer;
+	background: rgba(116, 40, 68, 1);
+	color: white;
+	padding: .5em;
+	display: inline-block;
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
+
+form.form-center label#lbl-archivos:hover {
+	background: rgba(90, 32, 53, 1);
+}
+
+form.form-center input[type="text"]::-webkit-input-placeholder, form.form-center textarea::-webkit-input-placeholder{
+	color: rgba(116, 40, 68, 1);
+	font-weight: bolder;
+}
+
+form.form-center textarea {
+	font-family: "Opensans";
+}
+
+form.form-center div:not(.error) {
+	display: flex;
+	justify-content: flex-end;
+}
+
+form.form-center div button {
+	text-align: right;
+	border: none;
+	background: rgba(116, 40, 68, 1) url("../img/icon_flecha_submit.png") no-repeat 94% center;
+	color: white;
+	padding: .5em;
+	padding-right: 1.8em;
+	min-width: 180px;
+	font-size: 1.1em;
+	font-weight: lighter;
+	font-family: "Opensans";
+}
+
+form.form-center div.error {
+	background: rgba(116, 40, 68, 1);
+	border-radius: 10px;
+	padding: .5em;
+	color: white;
+	position: relative;
+	margin-top: 5px;
+}
+
+form.form-center div.error:after {
+	content: "";
+	position: relative;
+	width: 0;
+	height: 0;
+	border-left: 5px solid transparent;
+	border-right: 5px solid transparent;
+	border-bottom: 5px solid rgba(116, 40, 68, 1);
+	top: -35px;
+	left: -150px;
+}
+
+p.paragraph-center {
+	width: 80%;
+	text-align: center;
+	margin: 0 auto;
+}
+
+@media screen and (max-width: 900px) {
+	header {
+		padding-bottom: 1.5em;
+	}
+
+	header ul {
+		flex-flow: row wrap;
+	}
+
+	header ul li#logo {
+		order: -1;
+		width: 100%;
+		margin-right: 0;
+	}
+	header ul li#logo img {
+		display: block;
+		margin: 0 auto;
+	}
+
+	header ul li:not(#logo) {
+		padding-top: 1em;
+	}
+}
+
+
+@media screen and (max-width: 500px) {
+
+	header ul{
+		/*display: block;*/
+		flex-direction: column;
+	}
+	
+	header ul li:not(#logo) {
+		padding-top: 10px;
+	}
+
+	section {
+		width: 100%;
+	}
+
+	img#contact {
+		width: 150px;
+		display: block;
+		margin: 0 auto;
+	}
+
+	form#contact-form {
+		width: calc(100% - 36px);
+	}
+
+	form#contact-form input[type="text"], form#contact-form textarea {
+		margin-left: 0px;
+	}
+}
