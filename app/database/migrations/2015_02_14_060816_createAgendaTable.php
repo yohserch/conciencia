@@ -13,11 +13,14 @@ class CreateAgendaTable extends Migration {
 	public function up()
 	{
 		Schema::create('agendas', function($table) {
-			$table->integer('id')->primary();
+			$table->increments('id');
 			$table->dateTime('fecha');
-			$table->time('hr_inicio');
-			$table->time('hr_fin');
-			$table->string('lugar');
+			$table->time('hora_inicio');
+			$table->time('hora_fin');
+			$table->string('sede');
+			$table->string('latitud');
+			$table->string('longitud');
+			$table->nullableTimestamps();
 		});
 	}
 
@@ -28,7 +31,7 @@ class CreateAgendaTable extends Migration {
 	 */
 	public function down()
 	{
-		//
+		Schema::drop('agendas');
 	}
 
 }

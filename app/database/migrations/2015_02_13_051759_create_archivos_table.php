@@ -13,11 +13,11 @@ class CreateArchivosTable extends Migration {
 	public function up()
 	{
 		Schema::create('archivos', function($table) {
-			$table->integer('id')->primary();
+			$table->increments('id');
 			$table->integer('id_propuesta');
 			$table->string('nombre_statico', 70);
 			$table->string('nombre_real', 80);
-			$table->timestamps();
+			$table->nullableTimestamps();
 		});
 	}
 

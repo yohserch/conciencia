@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 class AccountController extends BaseController {
 
@@ -24,11 +24,18 @@ class AccountController extends BaseController {
 			), $remember);
 
 			if($auth) {
-				return View::make('admin.home');
+				return Redirect::route('adminHome');
 			} else {
 				return Redirect::route('accountSignIn')
-								 ->with("message", "Usuario o contraseña invalidos por favor verifica tus datos");
+								 ->withInput()
+								 ->with("message", "Usuario y/o contraseña invalidos por favor verifica tus datos");
+
 			}
 		}
+	}
+
+	public function signOut() {
+		Auth::logout();
+		return Redirect::route('home');
 	}
 }

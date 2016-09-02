@@ -13,14 +13,14 @@ class CreatePropuestaTable extends Migration {
 	public function up()
 	{
 		Schema::create('propuestas', function($table) {
-			$table->integer('id')->primary();
+			$table->increments('id');
 			$table->string('nombre_propuesta');
 			$table->string('nombre', 60);
 			$table->string('escuela', 60);
 			$table->string('area', 150);
 			$table->string('email', 100);
 			$table->tinyInteger('status');
-			$table->timestamps();
+			$table->nullableTimestamps();
 		});
 	}
 

@@ -7,12 +7,13 @@ class HomeController extends BaseController {
 	}
 
 	public function showAgenda() {
-		$eventos = Agenda::all();
+		$eventos = Agenda::orderBy('fecha', 'ASC')->get();
 		return View::make('home.agenda')->with('eventos', $eventos);
 	}
 
 	public function showGaleria() {
-		return View::make('home.galeria');
+		$galerias = Galeria::all();
+		return View::make('home.galeria')->with('galerias', $galerias);
 	}
 
 	public function showContactForm() {
@@ -70,6 +71,26 @@ class HomeController extends BaseController {
 			}
 			$propuesta->archivos()->saveMany($files);
 			return Redirect::route('home')->with('message', 'Propuesta registrada con éxito');
+		}
+	}
+
+	public function postContacto() {
+		$validator = Validator::make(Input::all(), array(
+			'nombre' => 'required',
+			'email' => 'required|email',
+			'mensaje' => 'required'
+		));
+
+		if($validator->fails()) {
+			return Redirect::route('contacto')->withErrors($validator)->withInput();
+		} else {
+			$nombre = Input::get('nombre');
+			$email = Input::get('email');
+			$mensaje = Input::get('mensaje');
+			Mail::send('emails.contact.contact', array('mensaje' => $mensaje, 'nombre' => $nombre, 'email' => $email), function($message) use($nombre) {
+				$message->to('def.serch@gmail.com', $nombre)->subject('Contacto desde el sitio | IPN con-ciencia');
+			});
+			return Redirect::route('home')->with('message', 'Mensaje enviado con éxito, pronto nos pondremos en contacto contigo');
 		}
 	}
 

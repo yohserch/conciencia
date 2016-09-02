@@ -13,8 +13,7 @@ class CreateUsersTable extends Migration {
 	public function up()
 	{
 		Schema::create('users', function($table) {
-			$table->engine = 'MyIsam';
-			$table->integer('id')->primary();
+			$table->increments('id');
 			$table->string('username', 30)->unique();
 			$table->string('nombre', 30);
 			$table->string('apellidoP', 30);
@@ -25,7 +24,7 @@ class CreateUsersTable extends Migration {
 			$table->string('codigo', 60);
 			$table->boolean('activo');
 			$table->rememberToken();
-			$table->timestamps();
+			$table->nullableTimestamps();
 		});
 	}
 

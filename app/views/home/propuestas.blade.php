@@ -33,6 +33,7 @@
 		@endif
 		<label for="archivos" id="lbl-archivos">Elige archivos para enviar</label>
 		<input type="file" name="archivos[]" multiple accept=".doc, .docx, image/*, .pdf, .xlsx, .xls" id="archivos">
+		{{Form::token()}}
 		<div>
 			<button type="submit">Enviar propuesta</button>
 		</div>

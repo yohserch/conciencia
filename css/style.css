@@ -7,61 +7,72 @@ body {
 
 header {
 	background: rgb(40, 40, 40);
-	padding-bottom: 1em;
+	position: relative;
+	color: white;
 }
 
-header ul {
+header #logo {
+	position: absolute;
+	background: url('../img/Con-ciencia.png') no-repeat center;
+	width: 125px;
+	height: 156px;
+	display: inline-block;
+	left: 150px;
+}
+
+header #logo svg#atom {
+	position: relative;
+	margin: 0 auto;
+	display: block;
+	top: 20px;
+}
+
+header #logo svg#atom path, header #logo svg#atom circle {
+	fill: rgb(255,255,255);
+}
+
+header div#navigation {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-left: 275px;
+	padding-left: 1em;
+	padding-right: 1em;
+}
+header h1 {
+	display: inline-block;
+	font-family: 'Euphoria Script', cursive;
+	font-weight: lighter;
+	font-size: 2.5em;
+	margin: 10px 0;
+}
+
+header nav{
+	display: inline-block;
+	text-align: right;
+}
+
+header nav ul  {
 	margin: 0;
 	padding: 0;
-	display: flex;
-	justify-content: space-around;
-	align-items: center;
 }
 
-header ul li {
+header nav ul li {
 	list-style: none;
 	display: inline-block;
-	font-size: 1.25em;
-	font-family: "Existence";
 }
 
-header ul li a {
+header nav ul li a {
+	color: white;
 	text-decoration: none;
-	color: rgb(240,240,240);
+	font-size: 15px;
 }
 
-header img {
-	width: 200px;
+header nav ul li:nth-child(even) {
+	margin-right: 2px;
+	margin-left: 2px;
+	color: rgb(182, 53, 53);
 }
-
-div#lineaGuinda {
-	background: rgb(116, 40, 68);
-	height: 25px;
-}
-
-div#lineaGuinda > div#logoIPN {
-	background: rgb(116, 40, 68);
-	display: flex;
-	position: relative;
-	top: -19px;
-	align-items: center;
-	margin: 0 auto;
-	border-radius: 50%;
-	height: 60px;
-	width: 60px;
-	box-shadow: 1px 1px 5px rgba(40,40,40,0.7);
-}
-
-div#lineaGuinda > div#logoIPN img {
-	margin: 0 auto;
-	width: 30px;
-	height: 45px;
-}
-
-header ul li#logo {
-	margin-right: 2em;
-}
-
 
 section {
 	background: rgb(250,250,250);
@@ -90,6 +101,23 @@ section h2 {
 	text-shadow: 2px 2px 2px rgba(40,40,40, 0.5);
 }
 
+section h3.title-gallery {
+	margin-left: 1em;
+	margin-right: 1em;
+	padding-left: 1.5em;
+	font-size: 2em;
+	border-bottom: 2px solid rgba(116, 40, 68, 1);
+}
+
+section div.galleria {
+	padding: 1em;
+	height: 300px;
+}
+
+section p {
+	padding: 1em;
+}
+
 div#content {
 	padding-left: 1em;
 	padding-right: 1em;
@@ -107,8 +135,14 @@ div#content table {
 	width: calc(100% - 2em)
 }
 
-h3 {
+.agenda_p {
 	text-align: center;
+	margin: 0;
+	margin-bottom: 5px;
+}
+
+.agenda_p > span {
+	display: block;
 }
 
 /*div#content table thead th {
@@ -201,6 +235,7 @@ form.form-center div button {
 	font-size: 1.1em;
 	font-weight: lighter;
 	font-family: "Opensans";
+	margin-top: 1em;
 }
 
 form.form-center div.error {
